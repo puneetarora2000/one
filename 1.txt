@@ -1,0 +1,9 @@
+D1;Human machine interface for computer applications
+D2;A survey of user opinion of computer system response time
+D3;The EPS user interface management system
+D4;The EPS user interface management system
+D5;The EPS user interface management system
+D6;The EPS user interface management system
+D7;The EPS user interface management system  
+D8;The EPS user interface management system 
+D9;The EPS user interface management system 
