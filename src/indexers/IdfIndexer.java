@@ -10,7 +10,7 @@ package indexers;
  */
 
 import org.apache.commons.collections15.Transformer;
-import org.apache.commons.math3.linear.RealMatrix;
+import org.apache.commons.math.linear.RealMatrix;
 
 
 public class IdfIndexer implements Transformer<RealMatrix,RealMatrix> {
