@@ -1,9 +1,10 @@
 annotation.processing.enabled=true
 annotation.processing.enabled.in.editor=false
-annotation.processing.processor.options=
 annotation.processing.processors.list=
 annotation.processing.run.all.processors=true
 annotation.processing.source.output=${build.generated.sources.dir}/ap-source-output
+application.title=sandeep2
+application.vendor=Ecologic
 build.classes.dir=${build.dir}/classes
 build.classes.excludes=**/*.java,**/*.form
 # This directory is removed when the project is cleaned:
@@ -24,81 +25,11 @@ debug.test.classpath=\
 dist.dir=dist
 dist.jar=${dist.dir}/sandeep2.jar
 dist.javadoc.dir=${dist.dir}/javadoc
+endorsed.classpath=
 excludes=
-file.reference.apache-commons-lang.jar-2=G:\\radhika jars\\apache-commons-lang.jar
-file.reference.apache-commons-lang.jar-3=jars\\apache-commons-lang.jar
-file.reference.apache-mime4j-core-0.7.jar-1=G:\\radhika jars\\apache-mime4j-core-0.7.jar
-file.reference.apache-mime4j-core-0.7.jar-2=jars\\apache-mime4j-core-0.7.jar
-file.reference.apache-mime4j-dom-0.7.jar-1=G:\\radhika jars\\apache-mime4j-dom-0.7.jar
-file.reference.apache-mime4j-dom-0.7.jar-2=jars\\apache-mime4j-dom-0.7.jar
-file.reference.asm-3.1.jar-1=G:\\radhika jars\\asm-3.1.jar
-file.reference.asm-3.1.jar-2=jars\\asm-3.1.jar
-file.reference.boilerpipe-1.1.0.jar-1=G:\\radhika jars\\boilerpipe-1.1.0.jar
-file.reference.boilerpipe-1.1.0.jar-2=jars\\boilerpipe-1.1.0.jar
-file.reference.collections-generic-4.0.jar-2=G:\\radhika jars\\collections-generic-4.0.jar
-file.reference.collections-generic-4.0.jar-3=jars\\collections-generic-4.0.jar
-file.reference.com.ibm.icu_4.2.1.v20100412.jar-2=G:\\radhika jars\\com.ibm.icu_4.2.1.v20100412.jar
-file.reference.com.ibm.icu_4.2.1.v20100412.jar-3=jars\\com.ibm.icu_4.2.1.v20100412.jar
-file.reference.commons-codec-1.6.jar-1=G:\\radhika jars\\commons-codec-1.6.jar
-file.reference.commons-codec-1.6.jar-2=jars\\commons-codec-1.6.jar
-file.reference.commons-compress-1.3.jar-1=G:\\radhika jars\\commons-compress-1.3.jar
-file.reference.commons-compress-1.3.jar-2=jars\\commons-compress-1.3.jar
-file.reference.commons-io-2.4-javadoc.jar-2=G:\\radhika jars\\commons-io-2.4-javadoc.jar
-file.reference.commons-io-2.4-javadoc.jar-3=jars\\commons-io-2.4-javadoc.jar
-file.reference.commons-io-2.4-sources.jar-2=G:\\radhika jars\\commons-io-2.4-sources.jar
-file.reference.commons-io-2.4-sources.jar-3=jars\\commons-io-2.4-sources.jar
-file.reference.commons-io-2.4-test-sources.jar-2=G:\\radhika jars\\commons-io-2.4-test-sources.jar
-file.reference.commons-io-2.4-test-sources.jar-3=jars\\commons-io-2.4-test-sources.jar
-file.reference.commons-io-2.4-tests.jar-2=G:\\radhika jars\\commons-io-2.4-tests.jar
-file.reference.commons-io-2.4-tests.jar-3=jars\\commons-io-2.4-tests.jar
-file.reference.commons-io-2.4.jar-2=G:\\radhika jars\\commons-io-2.4.jar
-file.reference.commons-io-2.4.jar-3=jars\\commons-io-2.4.jar
-file.reference.commons-lang3-3.1-javadoc.jar-2=G:\\radhika jars\\commons-lang3-3.1-javadoc.jar
-file.reference.commons-lang3-3.1-javadoc.jar-3=jars\\commons-lang3-3.1-javadoc.jar
-file.reference.commons-lang3-3.1-sources.jar-2=G:\\radhika jars\\commons-lang3-3.1-sources.jar
-file.reference.commons-lang3-3.1-sources.jar-3=jars\\commons-lang3-3.1-sources.jar
-file.reference.commons-lang3-3.1-tests.jar-2=G:\\radhika jars\\commons-lang3-3.1-tests.jar
-file.reference.commons-lang3-3.1-tests.jar-3=jars\\commons-lang3-3.1-tests.jar
-file.reference.commons-lang3-3.1.jar-2=G:\\radhika jars\\commons-lang3-3.1.jar
-file.reference.commons-lang3-3.1.jar-3=jars\\commons-lang3-3.1.jar
-file.reference.commons-logging-1.1.1.jar-1=G:\\radhika jars\\commons-logging-1.1.1.jar
-file.reference.commons-logging-1.1.1.jar-2=jars\\commons-logging-1.1.1.jar
-file.reference.commons-math-2.2.jar=D:\\Dropbox\\jars\\commons-math-2.2.jar\\commons-math-2.2.jar
-file.reference.commons-math3-3.2-javadoc.jar-2=G:\\radhika jars\\commons-math3-3.2-javadoc.jar
-file.reference.commons-math3-3.2-sources.jar-2=G:\\radhika jars\\commons-math3-3.2-sources.jar
-file.reference.commons-math3-3.2-test-sources.jar-2=G:\\radhika jars\\commons-math3-3.2-test-sources.jar
-file.reference.commons-math3-3.2-tests.jar-2=G:\\radhika jars\\commons-math3-3.2-tests.jar
-file.reference.commons-math3-3.2.jar-2=G:\\radhika jars\\commons-math3-3.2.jar
-file.reference.crawler4j-3.5.jar-1=G:\\radhika jars\\crawler4j-3.5.jar
-file.reference.crawler4j-3.5.jar-2=jars\\crawler4j-3.5.jar
-file.reference.edu.mit.jwi_2.2.4.jar-2=G:\\radhika jars\\edu.mit.jwi_2.2.4.jar
-file.reference.edu.mit.jwi_2.2.4.jar-3=jars\\edu.mit.jwi_2.2.4.jar
-file.reference.geronimo-stax-api_1.0_spec-1.0.1.jar-1=G:\\radhika jars\\geronimo-stax-api_1.0_spec-1.0.1.jar
-file.reference.geronimo-stax-api_1.0_spec-1.0.1.jar-2=jars\\geronimo-stax-api_1.0_spec-1.0.1.jar
-file.reference.httpclient-4.2.3.jar-1=G:\\radhika jars\\httpclient-4.2.3.jar
-file.reference.httpclient-4.2.3.jar-2=jars\\httpclient-4.2.3.jar
-file.reference.httpcore-4.2.2.jar-1=G:\\radhika jars\\httpcore-4.2.2.jar
-file.reference.httpcore-4.2.2.jar-2=jars\\httpcore-4.2.2.jar
-file.reference.Jama-1.0.3.jar-2=G:\\radhika jars\\Jama-1.0.3.jar
-file.reference.Jama-1.0.3.jar-3=jars\\Jama-1.0.3.jar
-file.reference.je-4.0.92.jar-1=G:\\radhika jars\\je-4.0.92.jar
-file.reference.je-4.0.92.jar-2=jars\\je-4.0.92.jar
-file.reference.log4j-1.2.14.jar-1=G:\\radhika jars\\log4j-1.2.14.jar
-file.reference.log4j-1.2.14.jar-2=jars\\log4j-1.2.14.jar
-file.reference.lsa-1.3.jar-1=G:\\radhika jars\\lsa-1.3.jar
-file.reference.lsa-1.3.jar-2=jars\\lsa-1.3.jar
-file.reference.metadata-extractor-2.4.0-beta-1.jar-1=G:\\radhika jars\\metadata-extractor-2.4.0-beta-1.jar
-file.reference.metadata-extractor-2.4.0-beta-1.jar-2=jars\\metadata-extractor-2.4.0-beta-1.jar
-file.reference.opencsv-2.4.jar-2=G:\\radhika jars\\opencsv-2.4.jar
-file.reference.opencsv-2.4.jar-3=jars\\opencsv-2.4.jar
-file.reference.tagsoup-1.2.1.jar-1=G:\\radhika jars\\tagsoup-1.2.1.jar
-file.reference.tagsoup-1.2.1.jar-2=jars\\tagsoup-1.2.1.jar
-file.reference.tika-core-1.0.jar-1=G:\\radhika jars\\tika-core-1.0.jar
-file.reference.tika-core-1.0.jar-2=jars\\tika-core-1.0.jar
-file.reference.tika-parsers-1.0.jar-1=G:\\radhika jars\\tika-parsers-1.0.jar
-file.reference.tika-parsers-1.0.jar-2=jars\\tika-parsers-1.0.jar
+ 
 includes=**
-jar.compress=false
+jar.compress=true
 javac.classpath=\
     ${file.reference.Jama-1.0.3.jar}:\
     ${file.reference.apache-commons-lang.jar}:\
@@ -142,14 +73,20 @@ javac.classpath=\
     ${file.reference.collections-generic-4.0.jar-1}:\
     ${file.reference.com.ibm.icu.source_4.4.2.v20110208.jar}:\
     ${file.reference.com.ibm.icu_4.2.1.v20100412.jar-1}:\
+    ${file.reference.commons-io-2.4-javadoc.jar-1}:\
+    ${file.reference.commons-io-2.4-sources.jar-1}:\
+    ${file.reference.commons-io-2.4-test-sources.jar-1}:\
     ${file.reference.commons-io-2.4-tests.jar-1}:\
     ${file.reference.commons-io-2.4.jar-1}:\
     ${file.reference.commons-lang3-3.1-javadoc.jar-1}:\
     ${file.reference.commons-lang3-3.1-sources.jar-1}:\
     ${file.reference.commons-lang3-3.1-tests.jar-1}:\
     ${file.reference.commons-lang3-3.1.jar-1}:\
+    ${file.reference.commons-math3-3.2-javadoc.jar-1}:\
     ${file.reference.commons-math3-3.2-sources.jar-1}:\
+    ${file.reference.commons-math3-3.2-test-sources.jar-1}:\
     ${file.reference.commons-math3-3.2-tests.jar-1}:\
+    ${file.reference.commons-math3-3.2.jar-1}:\
     ${file.reference.edu.mit.jwi_2.2.4.jar-1}:\
     ${file.reference.fwd.zip}:\
     ${file.reference.icu4j-3_8_1.jar.zip}:\
@@ -215,6 +152,11 @@ javac.classpath=\
     ${file.reference.commons-lang3-3.1-tests.jar-3}:\
     ${file.reference.commons-lang3-3.1.jar-3}:\
     ${file.reference.commons-logging-1.1.1.jar-2}:\
+    ${file.reference.commons-math3-3.2-javadoc.jar-3}:\
+    ${file.reference.commons-math3-3.2-sources.jar-3}:\
+    ${file.reference.commons-math3-3.2-test-sources.jar-3}:\
+    ${file.reference.commons-math3-3.2-tests.jar-3}:\
+    ${file.reference.commons-math3-3.2.jar-3}:\
     ${file.reference.crawler4j-3.5.jar-2}:\
     ${file.reference.edu.mit.jwi_2.2.4.jar-3}:\
     ${file.reference.geronimo-stax-api_1.0_spec-1.0.1.jar-2}:\
@@ -228,6 +170,7 @@ javac.classpath=\
     ${file.reference.tagsoup-1.2.1.jar-2}:\
     ${file.reference.tika-core-1.0.jar-2}:\
     ${file.reference.tika-parsers-1.0.jar-2}:\
+    ${file.reference.junit-4.11.jar}:\
     ${file.reference.commons-math-2.2.jar}
 # Space-separated list of extra javac options
 javac.compilerargs=
@@ -242,7 +185,7 @@ javac.test.classpath=\
 javac.test.processorpath=\
     ${javac.test.classpath}
 javadoc.additionalparam=
-javadoc.author=false
+javadoc.author=true
 javadoc.encoding=${source.encoding}
 javadoc.noindex=false
 javadoc.nonavbar=false
@@ -250,12 +193,13 @@ javadoc.notree=false
 javadoc.private=false
 javadoc.splitindex=true
 javadoc.use=true
-javadoc.version=false
+javadoc.version=true
 javadoc.windowtitle=
 main.class=indexers.Main
 manifest.file=manifest.mf
 meta.inf.dir=${src.dir}/META-INF
 mkdist.disabled=false
+native.bundling.enabled=true
 platform.active=default_platform
 run.classpath=\
     ${javac.classpath}:\
