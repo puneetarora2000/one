@@ -78,6 +78,8 @@ public class TestKM {
     public static void main(String args[]){
     
      
+        // input cost : How to calculate 100-agreement  
+        
     double [][] costs = {{0.25,0,0},{0.25,0,0},{0,0.5,0.5}};
     
     Matrix mCosts = Matrix.constructWithCopy(costs);
@@ -90,8 +92,7 @@ public class TestKM {
       prettyPrintMatrix(legend,mCosts, 
       documentNames, words, new PrintWriter(System.out, true));
      System.out.println("==============================");
-     
-
+    
      double output[][]= KuhnMunkres.computeCostAssignment(costs);
    
      Matrix mOutCosts = Matrix.constructWithCopy(output);

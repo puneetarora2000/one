@@ -7,6 +7,7 @@ import delphi.main.java.de.tudarmstadt.ukp.dkpro.statistics.agreement.coding.Cod
 import delphi.main.java.de.tudarmstadt.ukp.dkpro.statistics.agreement.coding.DelphiStudy;
 import delphi.main.java.de.tudarmstadt.ukp.dkpro.statistics.agreement.coding.FleissKappaAgreement;
 import delphi.main.java.de.tudarmstadt.ukp.dkpro.statistics.agreement.coding.PercentageAgreement;
+import java.util.Random;
 //import junitframework.TestCase;
 //import junit.framework.TestCase;
 
@@ -20,40 +21,28 @@ public class MultiRaterAgreementTest  {
 	
 	/** Creates an example annotation study.
      * @return  */
-	public static DelphiStudy createExample() {
+	public static DelphiStudy createDelphiStudy(String words[],String documentname) {
 		DelphiStudy study = new DelphiStudy(3);
 		
                 //Documents -->Word -->Domain Politics :Yes ,No = Relavent or not relavant 
                 // 3 People = 3 Rates : 
                 
-                String words[] = {"W1","W2","W3","W4","W5","W6","W7","W8","W9","W10"};
+               // String words[] = {"W1","W2","W3","W4","W5","W6","W7","W8","W9","W10"};
                 
-                study.setDocumentName("D1");
+                study.setDocumentName(documentname);
                 
                 study.setDocumentWords(words);
                 
+                Random rnd = new Random();
+                for(int i=0;i<words.length;i++){
+                    int rater1 = rnd.nextInt(2);
+                    int rater2 = rnd.nextInt(2);
+                    int rater3 = rnd.nextInt(2);
+                    
+                    study.addItem(rater1, rater2, rater3);
+        	 
+                }
                 
-                // Election , D1  
-                // Word2 ,    D1  
-                // Election , D1  
-                // Election , D1  
-                // Election , D1  
-                // Election , D1  
-                // Election , D1  
-                // Election , D1  
-                // Election , D1  
-                
-                
-                study.addItem(1, 1, 1);
-        	study.addItem(1, 1, 2);
-		study.addItem(1, 2, 1);
-		study.addItem(2, 1, 1);
-		study.addItem(2, 2, 1);
-		study.addItem(2, 2, 2);
-		study.addItem(2, 2, 2);
-		study.addItem(2, 1, 2);
-		study.addItem(2, 2, 1);
-		study.addItem(2, 2, 1);
                 
                 if (study.getItemCount()==words.length)
                 {
@@ -73,7 +62,7 @@ public class MultiRaterAgreementTest  {
     
     	public static void testExampleMy() {
 
-            
+            /*
             try{
             
             DelphiStudy study = createExample();
@@ -106,7 +95,7 @@ public class MultiRaterAgreementTest  {
             
                  
                 
-                
+              */  
                 
                 
                 
