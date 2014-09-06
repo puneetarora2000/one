@@ -4,15 +4,14 @@
  * and open the template in the editor.
  */
 
-package algo;
+package algo.km;
 
 /**
  *
  * @author Ecologic
  */
-public class KuhnMunkres {
-    
-    /**
+public class KuhnMunkresAlgorithm {
+   /**
      * Takes in a matrix of non-negative values where the row indices represent
      * possible <b>executors</b> of the task and the column indices represent
      * possible <b>tasks</b>.  The returned matrix contains a 1 for entries
@@ -24,7 +23,7 @@ public class KuhnMunkres {
      * @param values a non-negative matrix of values.
      * @return an indicator matrix of assignments from executors to tasks.
      */
-    public static double[][] computeValueAssignment(double[][] valuesRaw) {
+    public static int[][] computeValueAssignment(double[][] valuesRaw) {
 
         int numRows = valuesRaw.length;
         if (numRows <= 0)
@@ -41,11 +40,7 @@ public class KuhnMunkres {
             System.arraycopy(valuesRaw[row], 0, values[row], 0, numColumns);
         for (int row = numRows; row < numPairs; ++row)
             values[row] = new double[numPairs];
- 
-        
-        System.out.println("===========================================");
-        System.out.println("Step 1: From each row subtract off the row min");
-       
+
         // Step 1: From each row subtract oï¬€ the row min.
         for (int row = 0; row < numPairs; ++row) {
             double rowMin = Double.MIN_VALUE;
@@ -55,10 +50,6 @@ public class KuhnMunkres {
                 values[row][col] -= rowMin;
         }
 
-         System.out.println("=================================================");
-         System.out.println(" ");
-        System.out.println("Step 2: From each column subtract off the column min.");
-        
         // Step 2: From each column subtract off the column min.
         for (int col = 0; col < numPairs; ++col) {
             double colMin = Double.MIN_VALUE;
@@ -67,10 +58,7 @@ public class KuhnMunkres {
             for (int row = 0; row < numPairs; ++row)
                 values[row][col] -= colMin;
         }
-        
-         System.out.println("===========================================");
-       
-        
+
         // Step 3: Use as few lines as possible to cover all the zeros in the 
         // matrix. There is no easy rule to do this â€“ basically trial and error.
         // Suppose you use k lines.
@@ -92,10 +80,7 @@ public class KuhnMunkres {
         // assignments. (See the examples below).
 
         // TODO; finish the Kuhn-Munkres algorithm
-    //    throw new UnsupportedOperationException("Not implemented yet.");
-    
-        return values;
-    
+        throw new UnsupportedOperationException("Not implemented yet.");
     }
 
     /**
@@ -110,7 +95,7 @@ public class KuhnMunkres {
      * @param costs a non-negative matrix of costs.
      * @return an indicator matrix of assignments from executors to tasks.
      */
-    public static double[][] computeCostAssignment(double[][] costs) {
+    public static int[][] computeCostAssignment(double[][] costs) {
 
         // Verify the matrix has reasonable size
         int numRows = costs.length;
@@ -156,7 +141,7 @@ public class KuhnMunkres {
      * @param values a non-negative matrix of values.
      * @return an indicator matrix of assignments from executors to tasks.
      */
-    public static double[][] computeValueMultiAssignment(double[][] values) {
+    public static int[][] computeValueMultiAssignment(double[][] values) {
 
         // Verify the matrix has reasonable size
         int numRows = values.length;
@@ -168,7 +153,7 @@ public class KuhnMunkres {
             throw new IllegalArgumentException("Matrix has zero columns");
 
         // Find initial matching using Hungarian algorithm
-        double[][] assignment = computeValueAssignment(values);
+        int[][] assignment = computeValueAssignment(values);
 
         // Greedily allocate remaining tasks
         for (int col = 0; col < numColumns; ++col) {
@@ -211,7 +196,7 @@ public class KuhnMunkres {
      * @param costs a non-negative matrix of costs.
      * @return an indicator matrix of assignments from executors to tasks.
      */
-    public static double[][] computeCostMultiAssignment(double[][] costs) {
+    public static int[][] computeCostMultiAssignment(double[][] costs) {
 
         // Verify the matrix has reasonable size
         int numRows = costs.length;
@@ -241,6 +226,5 @@ public class KuhnMunkres {
 
         // Find the solution for the value-maximization problem
         return computeValueMultiAssignment(costs);
-    }
-    
+    } 
 }

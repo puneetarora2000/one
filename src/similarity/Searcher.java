@@ -1,5 +1,6 @@
 package similarity;
 
+import algo.km.KuhnMunkres;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -7,6 +8,7 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import moreUtils.PrintUtil;
 
 import org.apache.commons.math.linear.OpenMapRealMatrix;
 import org.apache.commons.math.linear.RealMatrix;
@@ -18,6 +20,9 @@ import org.apache.commons.math.linear.RealMatrix;
  */
 public class Searcher {
 
+    
+    
+    
   public class SearchResult {
     public String title;
     public double score;
@@ -32,6 +37,64 @@ public class Searcher {
   private List<String> terms;
   private AbstractSimilarity similarity;
   
+    private   double CostMatrix[][] ;
+
+    
+    //double output[][]= KuhnMunkres.computeCostAssignment(costs);
+   
+    public    double[][]   ComputeKuhnMunkresCostAssigment(){
+        
+        double assn[][] = KuhnMunkres.computeCostAssignment(CostMatrix) ;
+        
+       System.out.println("Computing Cost Assigments :KM");
+        
+        
+        return assn;
+    }
+    
+    
+    
+    
+    public double[][] getCostMatrix() {
+        return CostMatrix;
+    }
+
+    public void setCostMatrix(double[][] CostMatrix) {
+        this.CostMatrix = CostMatrix;
+    }
+  
+    private double DelphiAgreement[] ;
+
+    public List<String> getDocuments() {
+        return documents;
+    }
+
+    public void setDocuments(List<String> documents) {
+        this.documents = documents;
+    }
+
+    public List<String> getTerms() {
+        return terms;
+    }
+
+    public void setTerms(List<String> terms) {
+        this.terms = terms;
+    }
+
+    public double[] getDelphiAgreement() {
+        return DelphiAgreement;
+    }
+
+    public void setDelphiAgreement(double[] DelphiAgreement) {
+        this.DelphiAgreement = DelphiAgreement;
+    }
+
+  
+  
+  
+    
+    
+    
   public void setTermDocumentMatrix(RealMatrix termDocumentMatrix) {
     this.termDocumentMatrix = termDocumentMatrix;
   }
@@ -50,14 +113,36 @@ public class Searcher {
   
   public List<SearchResult> search(String query) {
     // build up query matrix
-    RealMatrix queryMatrix = getQueryMatrix(query);
+      PrintUtil.printMsg("Building up query matrix");
+      
+      PrintUtil.printMsg("For :"+query);
+      
+      RealMatrix queryMatrix = getQueryMatrix(query);
+    
+    
+    
     final Map<String,Double> similarityMap = new HashMap<String,Double>();
     for (int i = 0; i < termDocumentMatrix.getColumnDimension(); i++) {
-      double sim = similarity.computeSimilarity(queryMatrix, 
+      
+        
+        double sim = similarity.computeSimilarity(queryMatrix, 
         termDocumentMatrix.getSubMatrix(
           0, termDocumentMatrix.getRowDimension() - 1, i, i));
+      
+      PrintUtil.printMsg("Computing Similarity");
+      
+      
+      
+      
       if (sim > 0.0D) {
-        similarityMap.put(documents.get(i), sim);
+
+          
+          similarityMap.put(documents.get(i), sim);
+          PrintUtil.printMsg("Building Similarity Map");
+          PrintUtil.printMsg("");
+          
+      
+      
       }
     }
     return sortByScore(similarityMap);
@@ -93,7 +178,12 @@ public class Searcher {
       if (score < 0.00001D) {
         continue;
       }
+      
+      PrintUtil.printMsg("Sorted Results");
+          
       results.add(new SearchResult(docName, score));
+    
+    
     }
     return results;
   }

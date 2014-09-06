@@ -170,6 +170,30 @@ public class Main {
     
     
     
+    private  static double[] Agreements(Matrix matrix, 
+            String[] documentNames, String[] words) {
+    
+        double agreement[] = new double[documentNames.length] ;
+        
+        double  costs[][]  = new double[documentNames.length][words.length];
+        
+        for(int i=0;i<documentNames.length;i++){
+            DelphiStudy study = MultiRaterAgreementTest.createDelphiStudy(words, documentNames[i]);
+            
+            PrintUtil.printMsg("Calculating agreement for      :"+documentNames[i] +"Document");
+            
+             FleissKappaAgreement pi = new FleissKappaAgreement(study);
+		
+                double oa = pi.calculateObservedAgreement();
+                double ea = pi.calculateExpectedAgreement();
+                  agreement[i] = pi.calculateAgreement();
+        
+        }
+        
+        return agreement;   
+    
+    }
+    
     
     private  static void prettyPrintMatrix(String legend, Matrix matrix, 
       
@@ -287,21 +311,31 @@ public class Main {
     
 
     
-    public   static void  SearchWithTfIdfVector(String SearchWordorSentence) throws Exception {
+    public   static void  SearcherDocuments(String SearchWordorSentence) throws Exception {
     
         PrintUtil.printStar();
 
 // generate the term document matrix via the appropriate indexer
-      IdfIndexer indexer = new IdfIndexer();
-        double[][] matrixData = vectorGenerator.getMatrix().getArray();
-        RealMatrix m = MatrixUtils.createRealMatrix(matrixData);
+        IdfIndexer indexer = new IdfIndexer();
+        double[][] vectorData = vectorGenerator.getMatrix().getArray();
+        RealMatrix m = MatrixUtils.createRealMatrix(vectorData);
         RealMatrix termDocMatrix =  indexer.transform(m);
-    Searcher searcher = new Searcher();
+    
+     Searcher searcher = new Searcher();
+    
+    Matrix tdf = new Matrix(m.getData());
+    
+    double agreements[] = Agreements(tdf,vectorGenerator.getDocumentNames(), vectorGenerator.getWords());
+    
+    
+    
     searcher.setDocuments(vectorGenerator.getDocumentNames());
     searcher.setTerms(vectorGenerator.getWords());
     searcher.setSimilarity(new CosineSimilarity());
     searcher.setTermDocumentMatrix(termDocMatrix);
-    // run the query
+    searcher.setDelphiAgreement(agreements);
+    searcher.setCostMatrix(vectorData);
+    searcher.ComputeKuhnMunkresCostAssigment();
     List<SearchResult> results = 
       searcher.search(SearchWordorSentence);
     
@@ -343,7 +377,7 @@ public static void main(String argsp[]){
             
             // Now Add Delphi Agreement .
             
-            MultiRaterAgreementTest mr = new MultiRaterAgreementTest();
+            //MultiRaterAgreementTest mr = new MultiRaterAgreementTest();
             
     
        Matrix adjMatrix = AdjPrintMatrix("Adj Term Frequency", tfMatrix, 
@@ -352,7 +386,7 @@ public static void main(String argsp[]){
           
             
         
-        SearchWithTfIdfVector("Binary");
+           SearcherDocuments("Binary");
         
           
         } catch (Exception ex) {
